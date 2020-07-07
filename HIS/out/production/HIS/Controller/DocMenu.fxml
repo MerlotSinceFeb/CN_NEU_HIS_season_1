@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="618.0" maxWidth="1141.0" prefHeight="618.0" prefWidth="1141.0" styleClass="green-theme" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DocMenuController">
+    <top>
+        <AnchorPane maxHeight="99.0" maxWidth="1141.0" prefHeight="99.0" prefWidth="1141.0">
+           <children>
+               <Label layoutX="14.0" layoutY="33.0" styleClass="font-gray" text="医疗管理系统" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="33.0">
+                   <effect>
+                       <Reflection bottomOpacity="0.2" fraction="0.5" topOffset="-5.0" />
+                   </effect>
+                   <font>
+                       <Font name="System Bold" size="26.0" />
+                   </font>
+               </Label>
+               <ImageView fitHeight="45" fitWidth="45" AnchorPane.rightAnchor="120" AnchorPane.topAnchor="15">
+
+            </ImageView>
+               <Button fx:id="Exit" layoutX="1166.0" layoutY="45.0" onAction="#exit" styleClass="btn-radius-large,blue-theme" text="退出系统" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="45.0" />
+            <Label layoutX="213.0" layoutY="57.0" text="医生端" />
+            <Label fx:id="doctorName" layoutX="347.0" layoutY="32.0" prefHeight="56.0" prefWidth="90.0" text="XXX" />
+            <Pane fx:id="tippane2" layoutX="540.0" layoutY="4.0" prefHeight="92.0" prefWidth="239.0">
+               <children>
+                  <Label fx:id="fail2" layoutX="3.0" layoutY="3.0" prefHeight="87.0" prefWidth="233.0" styleClass="warning-theme" text="Label" visible="false">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="success2" layoutX="3.0" layoutY="2.0" prefHeight="86.0" prefWidth="234.0" styleClass="warm-theme" text="Label" visible="false">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+           </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <SplitPane prefHeight="519.0" prefWidth="827.0">
+            <padding>
+                <Insets top="10" />
+            </padding>
+         <items>
+            <TabPane prefHeight="535.0" prefWidth="827.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="诊断详情">
+                     <content>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="22.0" layoutY="27.0" prefHeight="26.0" prefWidth="64.0" text="患者名：" />
+                              <Label fx:id="Pname" layoutX="94.0" layoutY="30.0" prefHeight="24.0" prefWidth="45.0" />
+                              <Label layoutX="32.0" layoutY="77.0" text="主诉：" />
+                              <Label layoutX="21.0" layoutY="146.0" prefHeight="20.0" prefWidth="67.0" text="现病史:" />
+                              <Label layoutX="7.0" layoutY="216.0" text="现医疗情况:" />
+                              <Label layoutX="30.0" layoutY="279.0" text="既往史:" />
+                              <Label layoutX="22.0" layoutY="364.0" text="初步诊断:" />
+                              <TextArea fx:id="Diagnose1" layoutX="94.0" layoutY="65.0" prefHeight="53.0" prefWidth="648.0" />
+                              <TextArea fx:id="Diagnose2" layoutX="94.0" layoutY="131.0" prefHeight="49.0" prefWidth="648.0" />
+                              <TextArea fx:id="Diagnose3" layoutX="90.0" layoutY="200.0" prefHeight="51.0" prefWidth="648.0" />
+                              <TextArea fx:id="Diagnose4" layoutX="90.0" layoutY="267.0" prefHeight="64.0" prefWidth="648.0" />
+                              <TextArea fx:id="Diagnose5" layoutX="90.0" layoutY="342.0" prefHeight="64.0" prefWidth="648.0" />
+                           </children>
+                        </Pane>
+                     </content>
+                </Tab>
+                <Tab text="处方开药">
+                     <content>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="TablePList" layoutX="27.0" layoutY="52.0" prefHeight="256.0" prefWidth="266.0">
+                                <columns>
+                                  <TableColumn fx:id="PListName0" prefWidth="195.0" text="处方名" />
+                                  <TableColumn fx:id="PListNum0" minWidth="0.0" prefWidth="69.0" text="药品种数" />
+                                </columns>
+                              </TableView>
+                              <TableView fx:id="TableChoosePList" layoutX="327.0" layoutY="51.0" prefHeight="259.0" prefWidth="266.0">
+                                 <columns>
+                                    <TableColumn fx:id="PlistName1" prefWidth="196.0" text="处方名" />
+                                    <TableColumn fx:id="PListNum1" minWidth="0.0" prefWidth="68.0" text="药品种数" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="27.0" layoutY="14.0" text="现有处方：">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="327.0" layoutY="14.0" text="开具处方：">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="TableMedInf" layoutX="32.0" layoutY="324.0" prefHeight="122.0" prefWidth="740.0">
+                                <columns>
+                                  <TableColumn fx:id="MedName" prefWidth="289.0" text="名称" />
+                                  <TableColumn fx:id="MedSp" minWidth="0.0" prefWidth="114.0" text="规格" />
+                                    <TableColumn fx:id="MedUnit" prefWidth="156.0" text="单位" />
+                              
+                                    <TableColumn fx:id="MedCost" prefWidth="180.0" text="单价" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="FinalButton" layoutX="628.0" layoutY="254.0" mnemonicParsing="false" onAction="#FinalCheck" prefHeight="48.0" prefWidth="150.0" text="确认开药" />
+                           </children>
+                        </Pane>
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </items>
+        </SplitPane>
+    </center>
+   <left>
+      <SplitPane dividerPositions="0.1276595744680851" orientation="VERTICAL" prefHeight="519.0" prefWidth="314.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="62.0" prefWidth="312.0">
+               <children>
+                  <ToolBar maxHeight="62.0" maxWidth="312.0" prefHeight="62.0" prefWidth="312.0">
+                    <items>
+                        <Label text="患者名:" />
+                        <TextField fx:id="diagnosesearch" maxHeight="38.0" maxWidth="150.0" prefHeight="30.0" prefWidth="150.0" />
+                      <Button fx:id="diagnose" layoutX="22.0" mnemonicParsing="false" onAction="#Diagnose" prefHeight="30.0" prefWidth="81.0" text="诊断" />
+                    </items>
+                  </ToolBar>
+               </children>
+            </AnchorPane>
+          <AnchorPane maxHeight="447.0" maxWidth="312.0" minHeight="0.0" minWidth="0.0" prefHeight="436.0" prefWidth="312.0">
+               <children>
+                  <TabPane prefHeight="447.0" prefWidth="312.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="本人">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="yourPatientT0" layoutY="30.0" maxHeight="408.0" maxWidth="312.0" prefHeight="171.0" prefWidth="312.0">
+                                       <columns>
+                                          <TableColumn fx:id="yourName0" prefWidth="111.0" text="姓名               " />
+                                          <TableColumn fx:id="yourAge0" minWidth="0.0" prefWidth="200.0" text="年龄" />
+                                       </columns>
+                                    </TableView>
+                                    <Label maxHeight="312.0" maxWidth="312.0" prefHeight="30.0" prefWidth="312.0" style="-fx-background-radius: 5;" text="  未诊断" />
+                                    <Label layoutY="201.0" maxHeight="312.0" maxWidth="312.0" prefHeight="30.0" prefWidth="312.0" style="-fx-background-radius: 5;" text="  已诊断" />
+                                    <TableView fx:id="yourPatientT1" layoutY="231.0" maxHeight="408.0" maxWidth="312.0" prefHeight="177.0" prefWidth="312.0">
+                                       <columns>
+                                          <TableColumn fx:id="yourName1" prefWidth="114.0" text="姓名               " />
+                                          <TableColumn fx:id="yourAge1" minWidth="0.0" prefWidth="197.0" text="年龄" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="科室">
+                        <content>
+                          <AnchorPane maxHeight="408.0" maxWidth="312.0" minHeight="0.0" minWidth="0.0" prefHeight="408.0" prefWidth="312.0">
+                                 <children>
+                                    <TableView fx:id="allPatientT0" layoutY="29.0" maxHeight="170.0" maxWidth="312.0" prefHeight="170.0" prefWidth="312.0">
+                                      <columns>
+                                        <TableColumn fx:id="allName0" prefWidth="105.0" text="姓名               " />
+                                        <TableColumn fx:id="allAge0" minWidth="0.0" prefWidth="206.0" text="年龄" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutY="-1.0" maxHeight="312.0" maxWidth="312.0" prefHeight="30.0" prefWidth="312.0" style="-fx-background-radius: 5;" text="  未诊断" />
+                                    <Label layoutY="197.0" maxHeight="312.0" maxWidth="312.0" prefHeight="30.0" prefWidth="312.0" style="-fx-background-radius: 5;" text="  已诊断" />
+                                    <TableView fx:id="allPatientT1" layoutY="227.0" maxHeight="408.0" maxWidth="312.0" prefHeight="183.0" prefWidth="312.0">
+                                       <columns>
+                                          <TableColumn fx:id="allName1" prefWidth="105.0" text="姓名               " />
+                                          <TableColumn fx:id="allAge1" minWidth="0.0" prefWidth="206.0" text="年龄" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </left>
+</BorderPane>

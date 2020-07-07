@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" styleClass="gird" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <children>
+      <Label fx:id="title" layoutY="20.0" prefHeight="79.0" prefWidth="1144.0" text="              超时空医疗管理系统">
+         <font>
+            <Font size="66.0" />
+         </font>
+         <effect>
+            <Reflection />
+         </effect>
+      </Label>
+      <Label fx:id="ID" layoutX="144.0" layoutY="222.0" prefHeight="71.0" prefWidth="114.0" text="  账号">
+         <font>
+            <Font name="STKaiti" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="password" layoutX="144.0" layoutY="380.0" prefHeight="71.0" prefWidth="114.0" text="  密码">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idfield" layoutX="328.0" layoutY="236.0" prefHeight="49.0" prefWidth="466.0" promptText="your ID" />
+      <PasswordField fx:id="passwordfield" layoutX="328.0" layoutY="391.0" prefHeight="49.0" prefWidth="466.0" promptText="your password" />
+      <Button fx:id="loginButton" layoutX="861.0" layoutY="507.0" mnemonicParsing="false" onAction="#login" prefHeight="93.0" prefWidth="214.0" style="-fx-background-radius: 20;" styleClass="Login-btn" text="登录">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorIDMessage" layoutX="328.0" layoutY="293.0" prefHeight="30.0" prefWidth="466.0" text="账号输入错误或账号不存在!" textFill="RED" visible="false" />
+      <Label fx:id="errorPasswordMessage" layoutX="335.0" layoutY="451.0" prefHeight="30.0" prefWidth="425.0" text="密码错误或账号不存在" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

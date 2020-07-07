@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="1141.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ghyMenuController">
+   <top>
+      <AnchorPane prefHeight="107.0" prefWidth="1141.0" styleClass="titled-pane" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="43.0" styleClass="titled-pane" text="医疗管理系统">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+            </Label>
+            <Label layoutX="195.0" layoutY="54.0" text="挂号端">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="exit" layoutX="997.0" layoutY="39.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-radius: 50;" styleClass="menu-btn" text="退出系统" />
+            <StackPane fx:id="tippane" layoutX="476.0" layoutY="9.0" prefHeight="89.0" prefWidth="335.0">
+               <children>
+                  <Label fx:id="success" prefHeight="89.0" prefWidth="335" style="-fx-background-radius: 5;" styleClass="warm-theme" text="                     挂号成功！" visible="false">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                   <Label fx:id="fail" prefHeight="89.0" prefWidth="335" style="-fx-background-radius: 5;" styleClass="warning-theme" text="                   有未填项目！" visible="false">
+                   <font>
+                       <Font size="19.0" />
+                   </font>
+                   </Label>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="523.0" prefWidth="334.0">
+          <padding>
+              <Insets top="10" />
+          </padding>
+         <items>
+               <AnchorPane maxWidth="180.0" minWidth="180.0" prefHeight="513.0" prefWidth="180.0" styleClass="dark-gray-theme">
+                  <children>
+                     <Accordion prefHeight="289.0" prefWidth="202.0">
+                       <panes>
+                         <TitledPane prefHeight="156.0" prefWidth="202.0" styleClass="ont-white" text="挂号退号">
+                           <content>
+                             <AnchorPane maxHeight="203.0" maxWidth="236.0" minHeight="60.0" minWidth="161.0" prefHeight="203.0" prefWidth="236.0" styleClass="dark-theme">
+                                 <children>
+                                    <Button fx:id="registration" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#registration" prefHeight="40.0" prefWidth="128.0" styleClass="menu-btn" text="挂号" />
+                                    <Button fx:id="returnReg" layoutX="13.0" layoutY="81.0" mnemonicParsing="false" onAction="#returnReg" prefHeight="42.0" prefWidth="130.0" styleClass="menu-btn" text="退号" />
+                                 </children>
+                                 <rotationAxis>
+                                    <Point3D x="1.0" z="1.0" />
+                                 </rotationAxis></AnchorPane>
+                           </content>
+                         </TitledPane>
+                         <TitledPane styleClass="ont-white" text="缴费退费">
+                           <content>
+                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="198.0" prefWidth="162.0" styleClass="dark-theme">
+                                 <children>
+                                    <Button fx:id="pay" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#pay" prefHeight="41.0" prefWidth="130.0" styleClass="menu-btn" text="缴费" />
+                                    <Button fx:id="returnPay" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" onAction="#returnPay" prefHeight="41.0" prefWidth="130.0" styleClass="menu-btn" text="退费" />
+                                 </children></AnchorPane>
+                           </content>
+                         </TitledPane>
+                         <TitledPane styleClass="ont-white" text="系统信息">
+                           <content>
+                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="231.0" styleClass="dark-theme" />
+                           </content>
+                         </TitledPane>
+                       </panes>
+                     </Accordion>
+                  </children>
+               </AnchorPane>
+            <StackPane fx:id="stackScene" prefHeight="530.0" prefWidth="964.0">
+               <children>
+                  <Pane fx:id="pane4" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                  <Pane fx:id="pane5" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                  <Pane fx:id="pane1" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="28.0" layoutY="14.0" text="现场挂号">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="75.0" text="发票号:" />
+                        <TextField fx:id="cardField" layoutX="82.0" layoutY="70.0" prefHeight="30.0" prefWidth="119.0" promptText="填写发票号">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="regB" layoutX="210.0" layoutY="70.0" maxHeight="30.0" maxWidth="50.0" mnemonicParsing="false" onAction="#regConfirm" prefHeight="30.0" prefWidth="50.0" styleClass="menu-btn" text="挂号" />
+                        <Button fx:id="freshB" layoutX="275.0" layoutY="70.0" maxHeight="30.0" maxWidth="50.0" mnemonicParsing="false" onAction="#refreshByHand" prefHeight="30.0" prefWidth="50.0" styleClass="menu-btn" text="清空" />
+                        <Label layoutX="28.0" layoutY="132.0" text="挂号信息">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="181.0" text="病历号:" />
+                        <TextField fx:id="mRField" layoutX="83.0" layoutY="176.0" prefHeight="30.0" prefWidth="118.0" promptText="填写病历号" />
+                        <Label layoutX="14.0" layoutY="231.0" text="出生日期:" />
+                        <DatePicker fx:id="birthDate" layoutX="85.0" layoutY="226.0" prefHeight="30.0" prefWidth="148.0" />
+                        <Label layoutX="14.0" layoutY="282.0" text="结算类别:" />
+                        <Label layoutX="46.0" layoutY="320.0" text="号别:" />
+                        <Label layoutX="30.0" layoutY="360.0" text="病历本" />
+                        <CheckBox fx:id="bookC" layoutX="83.0" layoutY="360.0" mnemonicParsing="false" />
+                        <Label layoutX="260.0" layoutY="181.0" text="姓名:" />
+                        <TextField fx:id="nameField" layoutX="300.0" layoutY="176.0" prefHeight="30.0" prefWidth="118.0" promptText="填写姓名" />
+                        <Label layoutX="443.0" layoutY="181.0" text="性别:" />
+                        <Label layoutX="260.0" layoutY="231.0" text="看诊日期:" />
+                        <DatePicker fx:id="sDDate" layoutX="339.0" layoutY="226.0" prefHeight="30.0" prefWidth="195.0" />
+                        <Label layoutX="260.0" layoutY="282.0" text="身份证号:" />
+                        <TextField fx:id="IDField" layoutX="342.0" layoutY="277.0" prefHeight="30.0" prefWidth="189.0" promptText="填写身份证号" />
+                        <Label layoutX="260.0" layoutY="320.0" text="挂号科室:" />
+                        <Label layoutX="260.0" layoutY="360.0" text="看诊医生:" />
+                        <Label layoutX="606.0" layoutY="181.0" text="年龄:" />
+                        <Label layoutX="722.0" layoutY="181.0" text="岁" />
+                        <Label layoutX="574.0" layoutY="231.0" text="家庭住址:" />
+                        <TextField fx:id="addressField" layoutX="643.0" layoutY="226.0" prefHeight="30.0" prefWidth="292.0" promptText="填写家庭住址" />
+                        <Label layoutX="574.0" layoutY="282.0" text="收费方式:" />
+                        <Label layoutX="574.0" layoutY="320.0" text="应收金额:" />
+                        <TextField fx:id="costField" layoutX="647.0" layoutY="315.0" prefHeight="30.0" prefWidth="137.0" promptText="填写金额" text="0" />
+                        <Label layoutX="14.0" layoutY="75.0" text="*" textFill="RED" />
+                        <Label layoutX="14.0" layoutY="181.0" text="*" textFill="RED" />
+                        <Label layoutY="231.0" text="*" textFill="RED" />
+                        <Label layoutX="3.0" layoutY="282.0" text="*" textFill="RED" />
+                        <Label layoutX="30.0" layoutY="320.0" text="*" textFill="RED" />
+                        <Label layoutX="246.0" layoutY="182.0" prefHeight="20.0" prefWidth="7.0" text="*" textFill="RED" />
+                        <Label layoutX="246.0" layoutY="231.0" text="*" textFill="RED" />
+                        <Label layoutX="250.0" layoutY="282.0" text="*" textFill="RED" />
+                        <Label layoutX="247.0" layoutY="320.0" text="*" textFill="RED" />
+                        <Label layoutX="246.0" layoutY="360.0" text="*" textFill="RED" />
+                        <Label layoutX="432.0" layoutY="180.0" text="*" textFill="RED" />
+                        <Label layoutX="592.0" layoutY="180.0" text="*" textFill="RED" />
+                        <Label layoutX="564.0" layoutY="282.0" text="*" textFill="RED" />
+                        <Label layoutX="562.0" layoutY="319.0" text="*" textFill="RED" />
+                        <ComboBox fx:id="payKind1" layoutX="88.0" layoutY="277.0" prefHeight="30.0" prefWidth="119.0" />
+                        <ComboBox fx:id="rKind" layoutX="88.0" layoutY="315.0" prefHeight="30.0" prefWidth="119.0" />
+                        <ComboBox fx:id="department" layoutX="342.0" layoutY="315.0" prefHeight="30.0" prefWidth="138.0" />
+                        <ComboBox fx:id="doctor" layoutX="341.0" layoutY="356.0" onMouseClicked="#chooseDoctor" prefHeight="30.0" prefWidth="138.0" />
+                        <ComboBox fx:id="gender" layoutX="493.0" layoutY="177.0" prefHeight="30.0" prefWidth="78.0" />
+                        <ComboBox fx:id="payKind2" layoutX="647.0" layoutY="277.0" prefHeight="30.0" prefWidth="138.0" />
+                        <TextField fx:id="age" layoutX="643.0" layoutY="177.0" prefHeight="30.0" prefWidth="66.0" />
+                        <Label layoutX="561.0" layoutY="231.0" text="*" textFill="RED" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pane2" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="20.0" prefHeight="48.0" prefWidth="158.0" text="患者信息查询:">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="68.0" prefHeight="35.0" prefWidth="63.0" text="病历号:" />
+                        <TextField fx:id="mRField2" layoutX="79.0" layoutY="71.0" prefHeight="30.0" prefWidth="108.0" promptText="填写病历号" />
+                        <Button fx:id="search" layoutX="205.0" layoutY="71.0" mnemonicParsing="false" onAction="#search1" text="查询" />
+                        <Label layoutX="14.0" layoutY="113.0" prefHeight="40.0" prefWidth="104.0" text="确认信息：">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="159.0" text="患者姓名:" />
+                        <TextField fx:id="nameField2" layoutX="86.0" layoutY="154.0" prefHeight="30.0" prefWidth="93.0" promptText="填写姓名" />
+                        <TextField fx:id="IDField2" layoutX="330.0" layoutY="154.0" promptText="填写身份证号" />
+                        <Label layoutX="255.0" layoutY="159.0" text="身份证号：" />
+                        <Label layoutX="14.0" layoutY="229.0" prefHeight="44.0" prefWidth="253.0" text="患者挂号信息">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="3.0" layoutY="293.0" maxHeight="20.0" maxWidth="934.0" prefHeight="20.0" prefWidth="934.0" text="     病历号                          姓名                      身份证号                          挂号日期               看诊科室                  看诊状态                   操作   " />
+                        <Line endX="2000.0" layoutX="100.0" layoutY="330.0" startX="-100.0" stroke="#9a9797" />
+                        <HBox fx:id="infTable" layoutX="4.0" layoutY="331.0" maxHeight="50.0" maxWidth="934.0" prefHeight="50.0" prefWidth="934.0" spacing="50.0" visible="false">
+                           <children>
+                              <Label fx:id="mRField22" prefHeight="20.0" prefWidth="102.0" text="   病历号" />
+                              <Label fx:id="nameField22" prefHeight="20.0" prefWidth="48.0" text="  姓名" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+                              <Label fx:id="IDField22" text="120109200002155513" />
+                              <Label fx:id="sDDate22" text="2019/7/24" />
+                              <Label fx:id="department22" prefHeight="20.0" prefWidth="87.0" text="精神心理科" />
+                              <Label fx:id="ifFinishField22" prefHeight="20.0" prefWidth="61.0" text="未就诊" />
+                              <Button fx:id="returnRegComfrim" mnemonicParsing="false" onAction="#ReturnRegFinal" prefHeight="30.0" prefWidth="56.0" style="-fx-background-radius: 50;" text="退号" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </HBox>
+                        <Label fx:id="defaultReturnReg" layoutX="414.0" layoutY="381.0" prefHeight="20.0" prefWidth="113.0" text="     暂无数据" textFill="#979292" />
+                     </children></Pane>
+                  <Pane fx:id="pane3" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="33.0" layoutY="37.0" text="病历号:" />
+                        <TextField fx:id="mR3" layoutX="89.0" layoutY="32.0" prefHeight="30.0" prefWidth="142.0" />
+                        <Button fx:id="search3" layoutX="255.0" layoutY="32.0" mnemonicParsing="false" onAction="#paySearch" styleClass="menu-btn" text="查询" />
+                        <Line endX="1000.0" layoutX="137.0" layoutY="224.0" startX="-200.0" />
+                        <Label layoutX="74.0" layoutY="170.0" prefHeight="44.0" prefWidth="134.0" text="病历号" />
+                        <Label layoutX="465.0" layoutY="182.0" text="应收金额" />
+                        <Label layoutX="280.0" layoutY="170.0" prefHeight="44.0" prefWidth="134.0" text="姓名" />
+                        <Label layoutX="819.0" layoutY="182.0" text="操作" />
+                        <Label fx:id="mR4" layoutX="74.0" layoutY="251.0" prefHeight="20.0" prefWidth="76.0" text="000000" visible="false" />
+                        <Label fx:id="name3" layoutX="280.0" layoutY="251.0" text="一二三" visible="false" />
+                        <Label fx:id="allCost3" layoutX="465.0" layoutY="251.0" prefHeight="20.0" prefWidth="89.0" text="100" visible="false" />
+                        <Pane fx:id="payPane3" layoutX="734.0" layoutY="214.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <Button fx:id="payBotton3" layoutX="64.0" layoutY="20.0" mnemonicParsing="false" onAction="#PayCheck" styleClass="menu-btn" text="确认缴费" />
+                           </children>
+                        </Pane>
+                     </children></Pane>
+               </children></StackPane>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>

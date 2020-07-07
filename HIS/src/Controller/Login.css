@@ -1,0 +1,62 @@
+
+.Login-btn{
+    -fx-background-color: rgb(30, 158, 255);;
+    -fx-text-fill: #fff;
+}
+.Login-btn:hover {
+    -fx-background-color: rgb(95, 184, 120);
+    -fx-text-fill: #fff;
+}
+.Login-btn:pressed{
+    -fx-background-color: rgb(30, 158, 255);
+    -fx-text-fill: #fff;
+}
+#title{
+    -fx-background-color: rgb(254, 184, 0);
+    -fx-text-fill: #fff;
+}
+#idfield{
+    /*边框色*/
+    -fx-border-color: rgb(230, 230, 230);
+    /*提示文字颜色*/
+    -fx-prompt-text-fill: rgb(162, 162, 162);
+    /*输入文字颜色*/
+    -fx-text-fill: rgb(110, 110, 110);
+    /*边框圆角*/
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    /*内边距*/
+    -fx-padding: 5 5 5 5;
+    /*鼠标形状*/
+    -fx-cursor: pointer;
+}
+#passwordfield{
+
+    /*边框色*/
+    -fx-border-color: rgb(230, 230, 230);
+    /*提示文字颜色*/
+    -fx-prompt-text-fill: rgb(162, 162, 162);
+    /*输入文字颜色*/
+    -fx-text-fill: rgb(110, 110, 110);
+    /*边框圆角*/
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    /*内边距*/
+    -fx-padding: 5 5 5 5;
+    /*鼠标形状*/
+    -fx-cursor: pointer;
+}
+#ID{
+
+    -fx-text-fill: rgb(110, 110, 110);
+    -fx-background-radius: 30;
+    }
+#password{
+
+    -fx-text-fill: rgb(110, 110, 110);
+    -fx-background-radius: 30;
+}
+.gird{
+    -fx-background-color: rgba(48, 203, 220, 0.31);
+    -fx-padding: 30 10 10 10;
+}
